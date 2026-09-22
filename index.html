@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans for refined editorial elegance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-light">
+
+  <!-- Shared Ambient Sunbeam & Dust Canvas Layer -->
+  <canvas id="ambient-canvas" class="ambient-canvas"></canvas>
+
+  <div class="audio-launch-overlay" id="audio-launch-overlay" role="dialog" aria-label="Enable celebration sound">
+    <button class="audio-launch-button" id="audio-launch-button" type="button">
+      <span>Begin the celebration</span>
+      <small>Tap to enable sound</small>
+    </button>
+  </div>
+
+  <!-- Discreet Floating Audio Toggle in Top Right (Minimalist & Unobtrusive) -->
+  <aside class="minimal-nav-bar">
+    <button id="sound-toggle-btn" class="minimal-sound-btn" aria-label="Toggle Sound" title="Sound: On">
+      <span class="sound-icon">🔊</span>
+    </button>
+  </aside>
+
+  <!-- Continuous Single-Page Canvas Container -->
+  <main class="page-scroll-container" id="scroll-container">
+
+    <!-- ==============================================
+         SECTION 1: REFINED ELEGANT WELCOME
+         ============================================== -->
+    <section id="welcome-section" class="page-section section-welcome" data-page="1">
+      <div class="sunbeam-glow glow-top"></div>
+      
+      <div class="section-content">
+        <div class="welcome-editorial-group">
+          <span class="editorial-eyebrow">A CELEBRATION</span>
+          <h1 class="welcome-heading">A Special Moment</h1>
+          <div class="editorial-divider"></div>
+          <p class="welcome-subtext">
+            Scroll gently to unfold the journey crafted in your honour.
+          </p>
+          <p class="opening-countdown" aria-live="polite">
+            <span id="countdown-label">The journey begins in</span> <strong id="countdown-value">10</strong>
+            <span class="opening-scroll-cue" id="opening-scroll-cue" hidden>Scroll down to begin</span>
+          </p>
+        </div>
+
+        <!-- Subtle Breathing Scroll Cue -->
+        <div class="minimal-scroll-cue">
+          <div class="cue-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 2: REFINED CELEBRATION & CONTINUOUS BALLOONS
+         ============================================== -->
+    <section id="wishes-section" class="page-section section-wishes" data-page="2">
+      <!-- Fullscreen Confetti Foil Canvas Layer -->
+      <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+
+      <!-- Continuous Floating Balloons Container -->
+      <div id="balloons-container" class="balloons-container"></div>
+
+      <div class="section-content">
+        <div class="celebration-editorial-group">
+          <span class="editorial-eyebrow">WITH WARMEST WISHES FROM ANU</span>
+          <h2 class="celebration-heading">
+            HAPPY <span class="gold-shimmer-text">BIRTHDAY</span>
+          </h2>
+          <div class="editorial-divider"></div>
+          <p class="celebration-wishes-text">
+           May this year bring you endless moments of joy, inspiring journeys, and milestones close to your heart. Here’s to celebrating life, embracing growth, and cherishing the beauty in every step of the journey.
+          </p>
+        </div>
+
+        <!-- Subtle Scroll Cue to Section 3 -->
+        <div class="minimal-scroll-cue">
+          <div class="cue-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 3: GRAND FORMAL PHOTO FRAME & BANYAN LAKE
+         ============================================== -->
+    <section id="frame-section" class="page-section section-frame" data-page="3">
+      
+      <!-- Right Half Soft-Blended Banyan Lake Landscape -->
+      <div class="frame-page-bg-blend" id="frame-page-bg-blend">
+        <img id="page3-custom-bg" class="page3-custom-bg" src="assets/banyan-lake.jpg" alt="Banyan Lake View">
+        <div class="bg-soft-gradient-overlay"></div>
+      </div>
+
+      <!-- Museum Wall Atmosphere with Sunlight -->
+      <div class="museum-wall-lighting"></div>
+
+      <div class="gallery-layout-container">
+        
+        <!-- LEFT HALF: Grand Formal Photo Frame that swings in from top-right -->
+        <div class="hanging-frame-stage">
+          <div class="swinging-frame-assembly" id="swinging-frame-assembly">
+            
+            <!-- Museum-grade bronze suspension cables -->
+            <div class="suspension-cables">
+              <div class="cable cable-left"></div>
+              <div class="cable cable-right"></div>
+              <div class="cable-clamp clamp-left"></div>
+              <div class="cable-clamp clamp-right"></div>
+            </div>
+
+            <!-- Grand Formal Gallery Frame with Gold Fillet & Bevel -->
+            <div class="photo-frame-outer">
+              <div class="formal-frame-border">
+                <div class="frame-gold-fillet"></div>
+                <div class="formal-frame-matting">
+                  <!-- Displayed Photo: User's Uploaded Birthday Photo -->
+                  <div class="photo-display-box" id="photo-display-box" title="Birthday Portrait">
+                    <img id="displayed-photo" class="displayed-photo" src="assets/frame-photo.jpg" alt="Birthday Portrait">
+                  </div>
+                  <!-- Elegant Museum Plaque Below Frame -->
+                  <div class="frame-brass-plaque">
+                    <span class="plaque-text">CELEBRATING SPECIAL MEMORIES</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Authentic gallery wall shadow -->
+            <div class="frame-wall-shadow"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT HALF: Minimalist Transparent Typography Blended With Lake Background -->
+        <div class="lake-wishes-stage">
+          <div class="minimal-wishes-box">
+            <span class="landscape-eyebrow">MOMENTS TO REMEMBER</span>
+            <h3 class="landscape-title">Happy Birthday</h3>
+            <p class="landscape-quote">
+              "Rooted in the bonds of people and memories starting with zoo and karanji kere."
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 4: CLOTHESLINE TWINE & 6 ROYAL POLAROIDS
+         (Morph transition carousel matching PDF slides)
+         ============================================== -->
+    <section id="polaroid-section" class="page-section section-polaroids" data-page="4">
+      <div class="sunbeam-glow glow-top"></div>
+
+      <!-- Section Editorial Header -->
+      <div class="polaroid-header">
+        <span class="editorial-eyebrow">A GALLERY OF FUNFUL MEMORIES</span>
+        <h2 class="polaroid-main-title">Moments on the Line</h2>
+        <div class="editorial-divider"></div>
+      </div>
+
+      <!-- Clothesline Twine Stage -->
+      <div class="clothesline-stage">
+        <!-- Horizontal rustic twine wire across the page -->
+        <div class="clothesline-twine"></div>
+
+        <!-- Carousel Navigation Controls -->
+        <button class="carousel-nav-btn nav-prev" id="carousel-prev" aria-label="Previous Polaroid">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="carousel-nav-btn nav-next" id="carousel-next" aria-label="Next Polaroid">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Horizontal Scrollable Track -->
+        <div class="polaroid-carousel-container" id="polaroid-carousel">
+          <div class="polaroid-track" id="polaroid-track">
+
+            <!-- Polaroid 1 -->
+            <div class="polaroid-item" data-index="1" data-tilt="-3">
+              <div class="wooden-clothespin">
+                <div class="peg-wood">
+                  <div class="peg-spring-ring"></div>
+                </div>
+              </div>
+              <div class="polaroid-card">
+                <div class="polaroid-photo-frame" title="Click to upload custom photo">
+                  <img src="assets/polaroid-1.jpg" alt="Memory 1" class="polaroid-img" id="polaroid-img-1">
+                  <div class="polaroid-upload-overlay">
+                    <span>📷 Change Photo</span>
+                  </div>
+                  <input type="file" class="polaroid-file-input" data-target="polaroid-img-1" accept="image/*" style="display: none;">
+                </div>
+                <div class="polaroid-caption-chin">
+                  <span class="chin-script">Chapter 01 &bull; Golden Beginnings</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 2 -->
+            <div class="polaroid-item" data-index="2" data-tilt="2.5">
+              <div class="wooden-clothespin">
+                <div class="peg-wood">
+                  <div class="peg-spring-ring"></div>
+                </div>
+              </div>
+              <div class="polaroid-card">
+                <div class="polaroid-photo-frame" title="Click to upload custom photo">
+                  <img src="assets/polaroid-2.jpg" alt="Memory 2" class="polaroid-img" id="polaroid-img-2">
+                  <div class="polaroid-upload-overlay">
+                    <span>📷 Change Photo</span>
+                  </div>
+                  <input type="file" class="polaroid-file-input" data-target="polaroid-img-2" accept="image/*" style="display: none;">
+                </div>
+                <div class="polaroid-caption-chin">
+                  <span class="chin-script">Chapter 02 &bull; Memorable Internals</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 3 -->
+            <div class="polaroid-item is-center" data-index="3" data-tilt="-2">
+              <div class="wooden-clothespin">
+                <div class="peg-wood">
+                  <div class="peg-spring-ring"></div>
+                </div>
+              </div>
+              <div class="polaroid-card">
+                <div class="polaroid-photo-frame" title="Click to upload custom photo">
+                  <img src="assets/polaroid-3.jpg" alt="Memory 3" class="polaroid-img" id="polaroid-img-3">
+                  <div class="polaroid-upload-overlay">
+                    <span>📷 Change Photo</span>
+                  </div>
+                  <input type="file" class="polaroid-file-input" data-target="polaroid-img-3" accept="image/*" style="display: none;">
+                </div>
+                <div class="polaroid-caption-chin">
+                  <span class="chin-script">Chapter 03 &bull; Unchangeable Embarrasments</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 4 -->
+            <div class="polaroid-item" data-index="4" data-tilt="3">
+              <div class="wooden-clothespin">
+                <div class="peg-wood">
+                  <div class="peg-spring-ring"></div>
+                </div>
+              </div>
+              <div class="polaroid-card">
+                <div class="polaroid-photo-frame" title="Click to upload custom photo">
+                  <img src="assets/polaroid-4.jpg" alt="Memory 4" class="polaroid-img" id="polaroid-img-4">
+                  <div class="polaroid-upload-overlay">
+                    <span>📷 Change Photo</span>
+                  </div>
+                  <input type="file" class="polaroid-file-input" data-target="polaroid-img-4" accept="image/*" style="display: none;">
+                </div>
+                <div class="polaroid-caption-chin">
+                  <span class="chin-script">Chapter 04 &bull; Unknown Peeking Results</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 5 -->
+            <div class="polaroid-item" data-index="5" data-tilt="-2.5">
+              <div class="wooden-clothespin">
+                <div class="peg-wood">
+                  <div class="peg-spring-ring"></div>
+                </div>
+              </div>
+              <div class="polaroid-card">
+                <div class="polaroid-photo-frame" title="Click to upload custom photo">
+                  <img src="assets/polaroid-5.jpg" alt="Memory 5" class="polaroid-img" id="polaroid-img-5">
+                  <div class="polaroid-upload-overlay">
+                    <span>📷 Change Photo</span>
+                  </div>
+                  <input type="file" class="polaroid-file-input" data-target="polaroid-img-5" accept="image/*" style="display: none;">
+                </div>
+                <div class="polaroid-caption-chin">
+                  <span class="chin-script">Chapter 05 &bull; Pure Laughter</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 6 -->
+            <div class="polaroid-item" data-index="6" data-tilt="3.5">
+              <div class="wooden-clothespin">
+                <div class="peg-wood">
+                  <div class="peg-spring-ring"></div>
+                </div>
+              </div>
+              <div class="polaroid-card">
+                <div class="polaroid-photo-frame" title="Click to upload custom photo">
+                  <img src="assets/polaroid image 6.jpg" alt="Memory 6" class="polaroid-img" id="polaroid-img-6">
+                  <div class="polaroid-upload-overlay">
+                    <span>📷 Change Photo</span>
+                  </div>
+                  <input type="file" class="polaroid-file-input" data-target="polaroid-img-6" accept="image/*" style="display: none;">
+                </div>
+                <div class="polaroid-caption-chin">
+                  <span class="chin-script">Chapter 06 &bull; Timeless Legacy</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 7 -->
+            <div class="polaroid-item" data-index="7" data-tilt="-3">
+              <div class="wooden-clothespin">
+                <div class="peg-wood">
+                  <div class="peg-spring-ring"></div>
+                </div>
+              </div>
+              <div class="polaroid-card">
+                <div class="polaroid-photo-frame" title="Click to upload custom photo">
+                  <img src="assets/polaroid image 7.jpg" alt="Memory 7" class="polaroid-img" id="polaroid-img-7">
+                  <div class="polaroid-upload-overlay">
+                    <span>📷 Change Photo</span>
+                  </div>
+                  <input type="file" class="polaroid-file-input" data-target="polaroid-img-7" accept="image/*" style="display: none;">
+                </div>
+                <div class="polaroid-caption-chin">
+                  <span class="chin-script">Chapter 07 &bull; Overenthusiastic Photographers</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 8 -->
+            <div class="polaroid-item" data-index="8" data-tilt="2.5">
+              <div class="wooden-clothespin">
+                <div class="peg-wood">
+                  <div class="peg-spring-ring"></div>
+                </div>
+              </div>
+              <div class="polaroid-card">
+                <div class="polaroid-photo-frame" title="Click to upload custom photo">
+                  <img src="assets/polaroid image 8.jpg" alt="Memory 8" class="polaroid-img" id="polaroid-img-8">
+                  <div class="polaroid-upload-overlay">
+                    <span>📷 Change Photo</span>
+                  </div>
+                  <input type="file" class="polaroid-file-input" data-target="polaroid-img-8" accept="image/*" style="display: none;">
+                </div>
+                <div class="polaroid-caption-chin">
+                  <span class="chin-script">Chapter 08 &bull; Mindblowing BTS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 9 -->
+            <div class="polaroid-item" data-index="9" data-tilt="-2">
+              <div class="wooden-clothespin">
+                <div class="peg-wood">
+                  <div class="peg-spring-ring"></div>
+                </div>
+              </div>
+              <div class="polaroid-card">
+                <div class="polaroid-photo-frame" title="Click to upload custom photo">
+                  <img src="assets/polaroid image 9.jpg" alt="Memory 9" class="polaroid-img" id="polaroid-img-9">
+                  <div class="polaroid-upload-overlay">
+                    <span>📷 Change Photo</span>
+                  </div>
+                  <input type="file" class="polaroid-file-input" data-target="polaroid-img-9" accept="image/*" style="display: none;">
+                </div>
+                <div class="polaroid-caption-chin">
+                  <span class="chin-script">Chapter 09 &bull; Endless Adventures</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 10 -->
+            <div class="polaroid-item" data-index="10" data-tilt="3">
+              <div class="wooden-clothespin">
+                <div class="peg-wood">
+                  <div class="peg-spring-ring"></div>
+                </div>
+              </div>
+              <div class="polaroid-card">
+                <div class="polaroid-photo-frame" title="Click to upload custom photo">
+                  <img src="assets/polaroid image 10.jpg" alt="Memory 10" class="polaroid-img" id="polaroid-img-10">
+                  <div class="polaroid-upload-overlay">
+                    <span>📷 Change Photo</span>
+                  </div>
+                  <input type="file" class="polaroid-file-input" data-target="polaroid-img-10" accept="image/*" style="display: none;">
+                </div>
+                <div class="polaroid-caption-chin">
+                  <span class="chin-script">Chapter 10 &bull; Forever Celebrated</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Tailored Dynamic Royal Message for Centered Polaroid -->
+      <div class="polaroid-message-stage">
+        <div class="polaroid-dynamic-message-box" id="polaroid-message-box">
+          <span class="message-eyebrow" id="polaroid-msg-chapter">CHAPTER 01</span>
+          <h3 class="message-title" id="polaroid-msg-title">Golden Beginnings</h3>
+          <p class="message-body" id="polaroid-msg-body">
+            "Where laughter and unforgettable memories first took root, sparking a bond that grows richer with every passing season."
+          </p>
+        </div>
+        <p class="polaroid-next-cue">When you are ready <span>The next chapter awaits</span></p>
+      </div>
+
+    </section>
+
+    <!-- ==============================================
+         MEMORY SLIDE 1 — NOSTALGIC CHAPTER
+         ============================================== -->
+    <section id="birthday-memory-1" class="page-section section-memory memory-layout-a" data-page="5">
+      <div class="memory-morph-layer">
+        <div class="memory-bg-blend memory-bg-from-right">
+          <img class="memory-bg-img" data-memory-key="slide1.background" alt="">
+        </div>
+        <div class="memory-sparkles" aria-hidden="true">
+          <span class="sparkle s1"></span><span class="sparkle s2"></span>
+          <span class="sparkle s3"></span><span class="sparkle s4"></span>
+          <span class="sparkle s5"></span>
+        </div>
+        <div class="memory-composition">
+          <figure class="memory-frame memory-frame-1" style="--rot: -6.5deg;">
+            <div class="memory-frame-inner">
+              <img class="memory-photo" data-memory-key="slide1.photo1" alt="A cherished early memory">
+              <div class="memory-upload-overlay"><span>Change Photo</span></div>
+              <input type="file" class="memory-file-input" accept="image/*" hidden>
+            </div>
+          </figure>
+          <figure class="memory-frame memory-frame-2" style="--rot: 4.2deg;">
+            <div class="memory-frame-inner">
+              <img class="memory-photo" data-memory-key="slide1.photo2" alt="A warm shared moment">
+              <div class="memory-upload-overlay"><span>Change Photo</span></div>
+              <input type="file" class="memory-file-input" accept="image/*" hidden>
+            </div>
+          </figure>
+          <blockquote class="memory-quote" data-memory-msg="slide1"></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         MEMORY SLIDE 2 — WARM JOURNEY
+         ============================================== -->
+    <section id="birthday-memory-2" class="page-section section-memory memory-layout-b" data-page="6">
+      <div class="memory-morph-layer">
+        <div class="memory-bg-blend memory-bg-from-left">
+          <img class="memory-bg-img" data-memory-key="slide2.background" alt="">
+        </div>
+        <div class="memory-sparkles" aria-hidden="true">
+          <span class="sparkle s2"></span><span class="sparkle s4"></span>
+          <span class="sparkle s6"></span><span class="sparkle s1"></span>
+          <span class="sparkle s3"></span>
+        </div>
+        <div class="memory-composition">
+          <figure class="memory-frame memory-frame-1" style="--rot: 5deg;">
+            <div class="memory-frame-inner">
+              <img class="memory-photo" data-memory-key="slide2.photo1" alt="A brighter day on the journey">
+              <div class="memory-upload-overlay"><span>Change Photo</span></div>
+              <input type="file" class="memory-file-input" accept="image/*" hidden>
+            </div>
+          </figure>
+          <figure class="memory-frame memory-frame-2" style="--rot: -3.8deg;">
+            <div class="memory-frame-inner">
+              <img class="memory-photo" data-memory-key="slide2.photo2" alt="A quiet joyful pause">
+              <div class="memory-upload-overlay"><span>Change Photo</span></div>
+              <input type="file" class="memory-file-input" accept="image/*" hidden>
+            </div>
+          </figure>
+          <blockquote class="memory-quote" data-memory-msg="slide2"></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         MEMORY SLIDE 3 — EMOTIONAL KEEP
+         ============================================== -->
+    <section id="birthday-memory-3" class="page-section section-memory memory-layout-c" data-page="7">
+      <div class="memory-morph-layer">
+        <div class="memory-bg-blend memory-bg-from-lower">
+          <img class="memory-bg-img" data-memory-key="slide3.background" alt="">
+        </div>
+        <div class="memory-sparkles" aria-hidden="true">
+          <span class="sparkle s5"></span><span class="sparkle s1"></span>
+          <span class="sparkle s3"></span><span class="sparkle s6"></span>
+          <span class="sparkle s2"></span>
+        </div>
+        <div class="memory-composition">
+          <figure class="memory-frame memory-frame-1" style="--rot: -4.5deg;">
+            <div class="memory-frame-inner">
+              <img class="memory-photo" data-memory-key="slide3.photo1" alt="A memory that still stays close">
+              <div class="memory-upload-overlay"><span>Change Photo</span></div>
+              <input type="file" class="memory-file-input" accept="image/*" hidden>
+            </div>
+          </figure>
+          <figure class="memory-frame memory-frame-2" style="--rot: 7deg;">
+            <div class="memory-frame-inner">
+              <img class="memory-photo" data-memory-key="slide3.photo2" alt="A tender overlapping chapter">
+              <div class="memory-upload-overlay"><span>Change Photo</span></div>
+              <input type="file" class="memory-file-input" accept="image/*" hidden>
+            </div>
+          </figure>
+          <blockquote class="memory-quote" data-memory-msg="slide3"></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         MEMORY SLIDE 4 — MEANINGFUL CHAPTER
+         ============================================== -->
+    <section id="birthday-memory-4" class="page-section section-memory memory-layout-d" data-page="8">
+      <div class="memory-morph-layer">
+        <div class="memory-bg-blend memory-bg-from-upper-right">
+          <img class="memory-bg-img" data-memory-key="slide4.background" alt="">
+        </div>
+        <div class="memory-sparkles" aria-hidden="true">
+          <span class="sparkle s4"></span><span class="sparkle s6"></span>
+          <span class="sparkle s1"></span><span class="sparkle s3"></span>
+          <span class="sparkle s5"></span>
+        </div>
+        <div class="memory-paper-botanicals" aria-hidden="true">
+          <span class="botanical botanical-top"></span>
+          <span class="botanical botanical-left"></span>
+          <span class="botanical botanical-bottom"></span>
+        </div>
+        <div class="memory-composition">
+          <figure class="memory-frame memory-frame-1" style="--rot: 3.2deg;">
+            <div class="memory-frame-inner">
+              <img class="memory-photo" data-memory-key="slide4.photo1" alt="A chapter that still glows">
+              <div class="memory-upload-overlay"><span>Change Photo</span></div>
+              <input type="file" class="memory-file-input" accept="image/*" hidden>
+            </div>
+          </figure>
+          <figure class="memory-frame memory-frame-2" style="--rot: -5.5deg;">
+            <div class="memory-frame-inner">
+              <img class="memory-photo" data-memory-key="slide4.photo2" alt="The next beautiful beginning">
+              <div class="memory-upload-overlay"><span>Change Photo</span></div>
+              <input type="file" class="memory-file-input" accept="image/*" hidden>
+            </div>
+          </figure>
+          <div class="memory-friendship-copy">
+            <span class="friendship-script">Good Friends</span>
+            <span class="friendship-subtitle">WITH HOPE OF BRIGHTER DAYS INCLUDING MOONG DAL<br>AHEAD</span>
+            <span class="friendship-heart">♡</span>
+          </div>
+          <blockquote class="memory-quote" data-memory-msg="slide4"></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         GRAND ROYAL BIRTHDAY FINALE
+         ============================================== -->
+    <section id="birthday-finale" class="page-section section-finale" data-page="9">
+      <div class="finale-morph-layer">
+        <div class="finale-radiance" aria-hidden="true"></div>
+        <div class="finale-gold-wash"></div>
+        <div class="finale-vignette"></div>
+        <div class="finale-ornament-frame" aria-hidden="true">
+          <span class="ornament-corner oc-tl"></span>
+          <span class="ornament-corner oc-tr"></span>
+          <span class="ornament-corner oc-bl"></span>
+          <span class="ornament-corner oc-br"></span>
+        </div>
+        <div class="memory-sparkles finale-sparkles" aria-hidden="true">
+          <span class="sparkle s1"></span><span class="sparkle s2"></span>
+          <span class="sparkle s3"></span><span class="sparkle s4"></span>
+          <span class="sparkle s5"></span><span class="sparkle s6"></span>
+          <span class="sparkle s1"></span>
+        </div>
+        <canvas id="finale-confetti-canvas" class="confetti-canvas"></canvas>
+        <div id="finale-balloons-container" class="balloons-container finale-balloons"></div>
+        <div class="finale-ribbon-sweep finale-ribbon-top" aria-hidden="true"></div>
+        <div class="finale-ribbon-sweep finale-ribbon-bottom" aria-hidden="true"></div>
+        <div class="finale-balloon-cluster finale-cluster-left" aria-hidden="true">
+          <span class="finale-static-balloon gold balloon-a"></span><span class="finale-static-balloon pearl balloon-b"></span>
+          <span class="finale-static-balloon confetti-balloon balloon-c"></span><span class="finale-static-balloon gold balloon-d"></span>
+          <span class="finale-static-balloon pearl balloon-e"></span>
+        </div>
+        <div class="finale-balloon-cluster finale-cluster-right" aria-hidden="true">
+          <span class="finale-static-balloon pearl balloon-a"></span><span class="finale-static-balloon gold balloon-b"></span>
+          <span class="finale-static-balloon confetti-balloon balloon-c"></span><span class="finale-static-balloon pearl balloon-d"></span>
+          <span class="finale-static-balloon gold balloon-e"></span>
+        </div>
+
+        <aside class="finale-side-copy finale-copy-left" aria-label="Celebration message">
+          <span class="finale-copy-star">&#10022;</span>
+          <p>Good Friends<br>WITH HOPE OF Brighter Days</p>
+          <span class="finale-copy-rule"></span>
+        </aside>
+        <aside class="finale-side-copy finale-copy-right" aria-label="Birthday wishes">
+          <span class="finale-copy-star">&#10022;</span>
+          <p>Here's to more laughs,<br>more memories,<br>and a brighter year ahead.</p>
+          <span class="finale-copy-rule"></span>
+        </aside>
+
+        <div class="finale-hero">
+          <div class="finale-crown" aria-hidden="true">✦</div>
+          <div class="royal-frame-assembly">
+            <div class="royal-outer-shadow"></div>
+            <div class="royal-frame-border">
+              <div class="royal-gold-fillet"></div>
+              <div class="royal-inner-mat">
+                <img id="finale-hero-photo" class="royal-photo" data-memory-key="final.photo" alt="Birthday portrait">
+                <div class="memory-upload-overlay"><span>Change Photo</span></div>
+                <input type="file" class="memory-file-input" accept="image/*" hidden>
+              </div>
+            </div>
+          </div>
+          <h2 class="finale-heading">HAPPY BIRTHDAY</h2>
+          <p class="finale-ribbon">A DAY WORTH CELEBRATING</p>
+          <p class="finale-name" id="finale-name"></p>
+          <button class="finale-exit-btn" id="finale-exit-btn" type="button">Exit Celebration</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/audio.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
