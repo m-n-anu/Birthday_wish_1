@@ -1600,6 +1600,7 @@ html, body {
 
 .finale-ribbon {
   color: #836021;
+  text-align: center;
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.28em;
@@ -1976,6 +1977,7 @@ html, body {
   text-shadow: 0 1px 2px rgba(255,255,255,0.9);
 }
 .finale-copy-left { left: 17%; }
+.finale-copy-left-secondary { top: 54%; }
 .finale-copy-right { right: 17%; }
 .finale-side-copy p {
   font-family: var(--font-serif);
@@ -2008,6 +2010,7 @@ html, body {
 @media (max-width: 1080px) {
   .finale-side-copy { top: 33%; width: 18vw; }
   .finale-copy-left { left: 8%; }
+  .finale-copy-left-secondary { top: 55%; }
   .finale-copy-right { right: 8%; }
   .royal-frame-assembly { width: min(370px, 52vw); height: min(46vh, 400px); }
 }
