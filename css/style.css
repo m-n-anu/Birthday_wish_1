@@ -1610,6 +1610,10 @@ html, body {
   border-bottom: 1px solid rgba(158,113,36,0.4);
   background: rgba(255,250,237,0.35);
 }
+.finale-ribbon-apology {
+  display: block;
+  margin-top: 0.5em;
+}
 
 .finale-balloons {
   z-index: 8;
@@ -2225,6 +2229,24 @@ html, body {
   .section-finale .royal-frame-assembly { width: min(310px, 40vw); height: min(310px, 55vh); }
   .section-finale .finale-heading { font-size: clamp(2.4rem, 8vw, 3.8rem); }
   .section-finale .finale-exit-btn { padding: 10px 22px; }
+}
+
+/* Give the two-part finale message a clear, elegant pause. */
+.section-finale .finale-ribbon {
+  line-height: 1.5;
+  letter-spacing: 0.18em;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.section-finale .finale-ribbon > span:first-child {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25em;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+.section-finale .finale-ribbon .finale-ribbon-apology {
+  margin-top: 1.1em;
 }
 
 /* Penultimate page: full-bleed banyan memory composition from the reference. */
